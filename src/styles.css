@@ -137,7 +137,7 @@ h2 { font-size: clamp(32px, 3.4vw, 48px); }
   .windows::-webkit-scrollbar { display: none; }
   .win, .win.on { flex: 0 0 64vw; height: 440px; scroll-snap-align: center; }
   .win { filter: brightness(0.75); }
-  .win .win__cap { opacity: 1; transform: none; left: 18px; right: 64px; }
+  .win .win__cap { opacity: 1; transform: none; left: 18px; right: 66px; min-width: 0; }
   .win:not(.on) .win__state { right: 14px; margin-right: 0; }
   .night { padding: 56px 20px; gap: 40px; }
   .facts { grid-template-columns: 1fr; gap: 28px; }

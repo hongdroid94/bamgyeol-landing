@@ -17,10 +17,11 @@ function setAmbient(win) {
 }
 
 function fade(el, to, ms, done) {
-  const from = el.volume, t0 = performance.now();
+  const from = el.volume, t0 = performance.now(), token = (el._fade = {});
   (function step(t) {
-    const k = Math.min(1, (t - t0) / ms);
-    el.volume = from + (to - from) * k;
+    if (el._fade !== token) return; // a newer fade on this element took over
+    const k = Math.min(1, Math.max(0, (t - t0) / ms));
+    el.volume = Math.min(1, Math.max(0, from + (to - from) * k));
     k < 1 ? requestAnimationFrame(step) : done && done();
   })(t0);
 }
