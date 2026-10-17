@@ -95,6 +95,14 @@ h2 { font-size: clamp(32px, 3.4vw, 48px); }
 .screens__row figcaption { margin-top: 18px; color: var(--haze); font-size: 15px; }
 
 /* Get */
+.faq { max-width: 880px; margin: 0 auto; padding: 40px clamp(20px, 4vw, 56px) 40px; }
+.faq__list { margin-top: 32px; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; cursor: pointer; list-style: none; font-size: 17.5px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 20px/1 var(--mono); color: var(--moon); transition: transform .3s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 0 24px; max-width: 60ch; color: var(--haze); font-size: 15.5px; }
 .get { position: relative; text-align: center; padding: 160px 20px 180px; isolation: isolate; overflow: hidden; }
 .get::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url(/img/onb_bg.webp) center 40% / cover no-repeat; opacity: 0.55; mask-image: linear-gradient(transparent, #000 25%, #000 70%, transparent); -webkit-mask-image: linear-gradient(transparent, #000 25%, #000 70%, transparent); }
 .get h2 { font-size: clamp(36px, 4.6vw, 64px); }
